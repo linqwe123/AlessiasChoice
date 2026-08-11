@@ -1168,6 +1168,7 @@ CHARACTER PROFILE, delete from HERE---------------------------------------------
 &lt;&lt;set $zhili=80&gt;&gt;//知力
 &lt;&lt;set $moli=0&gt;&gt;//魔力
 &lt;&lt;set $tili=100&gt;&gt;//體力
+&lt;&lt;set $shenfen to &quot;&quot;&gt;&gt;
 
 /* 主角狀態屬性 */
 &lt;&lt;set $pilao = 0&gt;&gt;
@@ -1305,12 +1306,9 @@ _contents
 她小聲地道：「就算姐姐不做女官，偶爾能有時間來陪我，我就不會那麼害怕了。」
 &lt;&lt;quest &quot;rugong&quot;&gt;&gt;
 
-[[繼續|皇儲暗示]]</tw-passagedata><tw-passagedata pid="12" name="蘿黛兒宿舍寢室" tags="" position="1000,175" size="100,100">&lt;&lt;if $nian is 1400 and $yue is 9 and $day is 1 and $shiduan is 2&gt;&gt;
-沒有回應。從昨天晚上蘿黛兒就沒有回來。
-&lt;&lt;else if&gt;&gt;
-沒有回應。現在要找蘿黛兒，或許要入宮了。
+[[繼續|皇儲暗示]]</tw-passagedata><tw-passagedata pid="12" name="蘿黛兒宿舍寢室" tags="keepbr" position="1000,175" size="100,100">沒有回應。現在要找蘿黛兒，或許要入宮了。
 
-[[返回|宿舍客廳]]</tw-passagedata><tw-passagedata pid="13" name="宿舍客廳" tags="" position="1000,275" size="100,100">這裡是宿舍客廳。
+[[返回|宿舍客廳]]</tw-passagedata><tw-passagedata pid="13" name="宿舍客廳" tags="keepbr" position="1000,275" size="100,100">這裡是宿舍客廳。
 宿舍是獨棟的二層小樓，一道旋轉樓梯連接著圓弧狀的長廊。二樓兩道相對的臥室門，一樓則是開放的公用客廳。
 
 [[另一扇門|蘿黛兒宿舍寢室]]
@@ -1348,7 +1346,7 @@ _contents
 &lt;!-- 🌸🌸🌸 Fill out your character&#39;s info here 🌸🌸🌸 --&gt;
 &lt;span&gt;姓名：&lt;/span&gt; 艾希莉‧瑟蘭
 &lt;br&gt;
-&lt;span&gt;身分：&lt;/span&gt; pronoun/pronoun
+&lt;span&gt;身分：&lt;/span&gt;&lt;&lt;do&gt;&gt; $shenfen&lt;&lt;/do&gt;&gt;
 &lt;br&gt;
 &lt;span&gt;目標：&lt;/span&gt; Information
 &lt;!-- 🌸🌸🌸 🌸🌸🌸 --&gt;
@@ -1432,7 +1430,9 @@ _contents
 &lt;&lt;/link&gt;&gt;&lt;br&gt;
 &lt;&lt;/if&gt;&gt;
 [[出門去圖書館借書|聖薇薇安圖書館]]&lt;br&gt;
-[[返回臥室|宿舍寢室][$menu to &quot;main&quot;]]</tw-passagedata><tw-passagedata pid="18" name="浴室" tags="" position="900,175" size="100,100"></tw-passagedata><tw-passagedata pid="19" name="王都上城區" tags="" position="1200,275" size="100,100">[[前往皇宮|皇宮]]
+[[返回臥室|宿舍寢室][$menu to &quot;main&quot;]]</tw-passagedata><tw-passagedata pid="18" name="浴室" tags="" position="900,175" size="100,100">
+
+[[返回|宿舍寢室]] </tw-passagedata><tw-passagedata pid="19" name="王都上城區" tags="keepbr" position="1200,275" size="100,100">[[前往皇宮|皇宮]]
 
 [[前往皇家騎士團|騎士團訓練場]]
 
@@ -1494,10 +1494,10 @@ _contents
 [[教學院|聖薇薇安教室]]
 [[圖書館|聖薇薇安圖書館]]
 [[教堂|聖薇薇安教堂]]
-[[離開校園|王都上城區]]</tw-passagedata><tw-passagedata pid="26" name="聖薇薇安教堂" tags="" position="1100,475" size="100,100">這裡是教堂
+[[離開校園|王都上城區]]</tw-passagedata><tw-passagedata pid="26" name="聖薇薇安教堂" tags="" position="1100,475" size="100,100">這裡是教堂&lt;br&gt;
 
 
-[[返回|聖薇薇安學院校園]]</tw-passagedata><tw-passagedata pid="27" name="聖薇薇安教室" tags="" position="1100,575" size="100,100">這裡是教學院。除了高等魔法的進階課程，也教授基礎的文學、算數、歷史及理論。
+[[返回|聖薇薇安學院校園]]</tw-passagedata><tw-passagedata pid="27" name="聖薇薇安教室" tags="keepbr" position="1100,575" size="100,100">聖薇薇安學院除了高等魔法的進階課程，也教授基礎的文學、算數、歷史及理論。
 
 
 [[魔法學院]]</tw-passagedata><tw-passagedata pid="28" name="警告" tags="splash" position="525,275" size="100,100">警告&lt;br&gt;
@@ -1520,6 +1520,8 @@ _contents
 @@.delayed;艾希莉，該睡了。@@
 @@.delayed;&lt;&lt;link &quot;繼續&quot;&gt;&gt;@@
 &lt;&lt;goto &quot;第一天夜晚&quot;&gt;&gt;
+&lt;&lt;set $shenfen to &quot;聖薇薇安學院準畢業生&quot;&gt;&gt;
+&lt;&lt;redo&gt;&gt;
 &lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="首頁" tags="splash" position="425,275" size="100,100">&lt;!-- 🌸🌸🌸 Your title goes here 🌸🌸🌸 --&gt;
 &lt;center&gt;&lt;h1&gt;金枝&lt;/h1&gt;&lt;/center&gt; 
 &lt;!-- 🌸🌸🌸 🌸🌸🌸 --&gt;
@@ -1617,7 +1619,7 @@ _contents
 
 &lt;&lt;link &quot;返回&quot;&gt;&gt;
 &lt;&lt;run Dialog.empty().wikiPassage(&quot;屬性&quot;);&gt;&gt;
-&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="皇儲暗示" tags="keepbr" position="725,475" size="100,100">說明會持續了一個上午，直到鄰近正午才結束。
+&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="44" name="皇儲暗示" tags="keepbr fadein" position="725,475" size="100,100">說明會持續了一個上午，直到鄰近正午才結束。
 蘿黛兒挽著艾希莉的手臂膩在她身側，面上些許的脆弱與不安已經消失殆盡，就好像從來不存在一樣。
 話題已經換成了待會要到哪裡吃午飯。
 艾希莉任由她拉著，不知不覺遠離了校園內的大道。
